@@ -22,15 +22,15 @@ public class Graph {
 	 * @author Romain Fournier
 	 */
 	public class Vertex {
-		private String name = "";
+		private int id = 0;
 		private ArrayList<Vertex> neighborhood = new ArrayList<Vertex>();
 		private ArrayList<Vertex> sortedNeighborhood = new ArrayList<Vertex>();
 
 		/**
 		 * @param n the name of the vertex
 		 */
-		public Vertex(String n) {
-			name = n;
+		public Vertex(int id) {
+			this.id = id;
 		};
 		
 		/**
@@ -89,13 +89,13 @@ public class Graph {
 		/**
 		 * @return the name of the vertex
 		 */
-		public String GetName() {
-			return name;
+		public int ID() {
+			return id;
 		}
 	
 		@Override
 		public String toString() {
-			return name;
+			return "" + (id + 1);
 		}
 	}
 	
@@ -140,7 +140,7 @@ public class Graph {
 		//Inits the vertices
 		vertexList = new ArrayList<Vertex>(vertices);
 		for (int i = 0; i < vertices; i++) {
-			vertexList.add(new Vertex(""+(i + 1)));
+			vertexList.add(new Vertex(i));
 		}
 
 		
