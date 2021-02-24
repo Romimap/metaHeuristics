@@ -24,13 +24,13 @@ public class State {
     }
 
     /**
-     * Creates a new state
+     * Creates a new state, should be called by GenerateNeighboringState
      * @param g the graph attached to this state
      * @param cv the vertex ID that changed from the previous state 
      * @param s the new values (only s[cv] should be altered)
      * @param ps the parent state
      */
-    public State (Graph g, int cv, int[] s, State ps) {
+    private State (Graph g, int cv, int[] s, State ps) {
         graph = g;
         assert (s.length != g.GetVertexCount()) : "invalid state, vertex count does not match";
         values = s;
