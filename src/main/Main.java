@@ -18,7 +18,7 @@ public class Main {
 
 		
 		for (int i = 0; i < iterations; i++) {
-			State[] voisins = new State[10];
+			State[] voisins = new State[neighbors];
 
 			for (int j = 0; j < neighbors; j++)
 				voisins[j] = s.GenerateNeighboringState(maxCol, j);
