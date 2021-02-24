@@ -7,6 +7,7 @@ import COLParser.Graph.Vertex;
 
 public class Main {
 	public static void main (String[] args) throws IOException {
+
 		Graph g = new Graph(args[0]);
 		
 		
