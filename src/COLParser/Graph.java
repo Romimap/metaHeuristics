@@ -100,8 +100,7 @@ public class Graph {
 	}
 	
 	class SortVertexByDegree implements Comparator<Vertex> {
-	    public int compare(Vertex a, Vertex b)
-	    {
+	    public int compare(Vertex a, Vertex b) {
 	        return a.GetDegree() - b.GetDegree();
 	    }
 	}
