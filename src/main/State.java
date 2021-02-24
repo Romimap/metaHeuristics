@@ -80,14 +80,39 @@ public class State {
      * generates a neighboring state, only 1 value from 'values' should be altered
      * @return a freshly made state
      */
-    public State GenerateNeighboringState () {
+    public State GenerateNeighboringState (int maxCol, int ithBestCandidate) {
         int[] newValues = values.clone();
-        int newChangedValue = -1;
+        int newChangedVertex = -1;
         // TODO: generate a state (change a value, set newValues and newChangedValues)
 
+
+        newChangedVertex = sortedVertexByViolation.get(ithBestCandidate).ID(); //Le sommet qui viol le plus
+
+        //On enregistre les valeurs avant de jouer avec
+        int viols = violations[newChangedVertex];
+        int value = values[newChangedVertex];
+
+        int newViols = viols;
+        int newValue = value;
+        for (int i = 0; i < maxCol; i++) { //On cherche la couleur qui fait le moins de viols
+            //On reset violations pour que Violations(newChangedValue) refasse son calcul
+            violations[newChangedVertex] = -1; 
+            values[newChangedVertex] = i;
+            if (Violations(newChangedVertex) < newViols) { //si ca viol moins, on à un nouveau candidat
+                newViols = Violations(newChangedVertex);
+                newValue = i;
+            }
+            
+        }
+        //On remet tout comme avant
+        violations[newChangedVertex] = viols;
+        values[newChangedVertex] = value;
+
+
+        newValues[newChangedVertex] = newValue; //On change la valeur dans le nouveau tableau
         
 
-        State s = new State(graph, newChangedValue, newValues, this);
+        State s = new State(graph, newChangedVertex, newValues, this);
         children.add(s);
         return s;
     }

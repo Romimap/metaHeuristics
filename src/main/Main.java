@@ -8,10 +8,21 @@ import COLParser.Graph.Vertex;
 public class Main {
 	public static void main (String[] args) throws IOException {
 		Graph g = new Graph("homer.col");
+		long start = System.currentTimeMillis();
 		
-		State root = new State(g);
-		for (Vertex v : root.sortedVertexByViolation) {
-			System.out.println(v.ID() + " " + root.Violations(v.ID()) + "/" + v.GetDegree());
+		State s = new State(g);
+
+		int iterations = 1000;
+
+		for (int i = 0; i < iterations; i++) {
+			s = s.GenerateNeighboringState(16, 0);
+		}
+		long end = System.currentTimeMillis();
+
+
+		System.out.println(iterations + " iters : " + (end - start) + "ms");
+		for (Vertex v : s.sortedVertexByViolation) {
+			System.out.println(v.ID() + " " + s.Violations(v.ID()) + "/" + v.GetDegree());
 		}
 	}
 }
