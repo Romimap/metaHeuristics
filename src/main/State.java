@@ -17,7 +17,7 @@ public class State {
     private Graph graph;
     private int[] values;
     private int[] violations;
-    float temperature = 0.1f;
+
     public ArrayList<Vertex> sortedVertexByViolation = new ArrayList<Vertex>(); //stores the vertex ids that violates the most, descending
     private int changedVertex = -1;
     private LinkedList<State> children = new LinkedList<State>();

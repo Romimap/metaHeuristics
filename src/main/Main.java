@@ -11,6 +11,7 @@ public class Main {
         int iterations = 1000;
         int neighbors = 5;
         int maxCol = 15;
+
         int nombre_essais = 100000;
 
         Graph g = new Graph("le450_15b.col");
@@ -26,7 +27,7 @@ public class Main {
                 State[] voisins = new State[10];
 
                 for (int j = 0; j < neighbors; j++)
-                    voisins[j] = s.GenerateNeighboringState(maxCol, j);
+                    voisins[j] = s.GenerateNeighboringState(maxCol);
 
                 State min = s;
 
@@ -42,7 +43,7 @@ public class Main {
             int violation = s.HardCheckViolations();
 
             System.out.println(violation + "/" + g.GetEdgeCount());
-            
+
             if (violation == 0) {
                 System.out.println("");
                 System.out.println(iterations + " iterations : " + (end - start) + "ms");
@@ -54,22 +55,39 @@ public class Main {
                 System.out.println("");
                 for (Vertex v : s.sortedVertexByViolation)
                     System.out.println(v.ID() + "		" + s.Violations(v.ID()) + "		" + v.GetDegree() + "		" + s.Value(v.ID()));
-                System.out.println("Solution find with try number "+ k + " after " + (end - startTry) + "ms");
+                System.out.println("Solution find with try number " + k + " after " + (end - startTry) + "ms");
                 break;
             }
         }
     }
 
-    public static State SA_Move(State x) {return null;}
+    public static State SA_Move(State cur, int maxCol, float temperature) {
+        int bestCost = Integer.MAX_VALUE;
+        State x_best = cur;
+        boolean accepted = false;
+        for (int i = 0; i < maxCol; i++) {
+            State x = cur.GenerateNeighboringState(maxCol);
+            if (x.Violations() <= cur.Violations() || Math.random() < Math.exp(-x.DeltaViolations() / temperature)) {
+                accepted =
+                        true;
+            }
+            if (x.Violations() < bestCost) {
+                x_best = x;
+                bestCost = x.Violations();
+            }
+        }
+        if (accepted) return x_best;
+        else return cur;
+    }
 
-    public static State MetaHeuristic (Graph g, int maxCol, int maxTries, int maxMoves) {
+    public static State MetaHeuristic(Graph g, int maxCol, int maxTries, int maxMoves, float temperature) {
         State best = null;
 
         for (int i = 0; i < maxTries; i++) {
             State x = new State(g, maxCol);
             State bestWalk = null;
             for (int j = 0; j < maxMoves; j++) {
-                x = SA_Move(x);
+                x = SA_Move(x, maxCol, temperature);
                 if (bestWalk == null || x.Violations() < bestWalk.Violations())
                     bestWalk = x;
             }
