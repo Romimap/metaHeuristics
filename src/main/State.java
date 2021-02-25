@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
 
+
 /**
  * This class represents a graph state. it stores the previous state, its children states and the vertex that was changed.
  * @author Romain Fournier
@@ -81,37 +82,12 @@ public class State {
      * generates a neighboring state, only 1 value from 'values' should be altered
      * @return a freshly made state
      */
-    public State GenerateNeighboringState (int maxCol, int ithBestCandidate) {
+    public State GenerateNeighboringState (int maxCol) {
         int[] newValues = values.clone();
         int newChangedVertex = -1;
 
-        newChangedVertex = sortedVertexByViolation.get(ithBestCandidate).ID(); //Le sommet qui viol le plus
-
-        //On enregistre les valeurs avant de jouer avec
-        int viols = violations[newChangedVertex];
-        int value = values[newChangedVertex];
-
-
-        int newViols = viols;
-        int newValue = value;
-        for (int i = 0; i < maxCol; i++) { //On cherche la couleur qui fait le moins de viols
-            //On reset violations pour que Violations(newChangedValue) refasse son calcul
-            violations[newChangedVertex] = -1; 
-            values[newChangedVertex] = i;
-
-            if (Violations(newChangedVertex) < newViols || Math.random() < Math.exp((DeltaViolations()/(float)maxCol)/ temperature)) { //si ca viol moins, on à un nouveau candidat
-                newViols = Violations(newChangedVertex);
-                newValue = i;
-            }
-
-        }
-        //On remet tout comme avant
-        violations[newChangedVertex] = viols;
-        values[newChangedVertex] = value;
-
-
-        newValues[newChangedVertex] = newValue; //On change la valeur dans le nouveau tableau
-        temperature_decrease(0.0001f);
+        newChangedVertex = Rand.r.nextInt(graph.GetVertexCount());
+        newValues[newChangedVertex] = Rand.r.nextInt(maxCol);
 
         State s = new State(graph, newChangedVertex, newValues, this);
         children.add(s);

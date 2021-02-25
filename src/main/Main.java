@@ -59,4 +59,24 @@ public class Main {
             }
         }
     }
+
+    public static State SA_Move(State x) {return null;}
+
+    public static State MetaHeuristic (Graph g, int maxCol, int maxTries, int maxMoves) {
+        State best = null;
+
+        for (int i = 0; i < maxTries; i++) {
+            State x = new State(g, maxCol);
+            State bestWalk = null;
+            for (int j = 0; j < maxMoves; j++) {
+                x = SA_Move(x);
+                if (bestWalk == null || x.Violations() < bestWalk.Violations())
+                    bestWalk = x;
+            }
+            if (best == null || bestWalk.Violations() < best.Violations())
+                best = bestWalk;
+        }
+
+        return best;
+    }
 }
