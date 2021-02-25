@@ -29,7 +29,7 @@ public class State {
     /**
      * Root state
      */
-    public State (Graph g) {
+    public State (Graph g, int max_col) {
         graph = g;
         values = new int[g.GetVertexCount()];
         violations = new int[g.GetVertexCount()];
@@ -40,7 +40,7 @@ public class State {
             Violations(i);
             sortedVertexByViolation.add(graph.Get(i));
         }
-
+        initialisation_random(max_col);
         sortedVertexByViolation.sort(new SortVertexByViolations());
     }
 
@@ -83,8 +83,6 @@ public class State {
     public State GenerateNeighboringState (int maxCol, int ithBestCandidate) {
         int[] newValues = values.clone();
         int newChangedVertex = -1;
-        // TODO: generate a state (change a value, set newValues and newChangedValues)
-
 
         newChangedVertex = sortedVertexByViolation.get(ithBestCandidate).ID(); //Le sommet qui viol le plus
 
@@ -125,6 +123,15 @@ public class State {
         int parentViolations = parentState.Violations(changedVertex);
         int currentViolations = Violations(changedVertex);
         return currentViolations - parentViolations;
+    }
+
+    public void initialisation_random(int max_col){
+        for (int vertex: values) {
+            int value_random = (int)(Math.random() * max_col)+1;
+//            System.out.println(value_random);
+            values[vertex] = value_random ;
+
+        }
     }
 
     /**
