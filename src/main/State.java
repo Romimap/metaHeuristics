@@ -33,14 +33,14 @@ public class State {
         graph = g;
         values = new int[g.GetVertexCount()];
         violations = new int[g.GetVertexCount()];
+        initialisation_random(max_col);
         
-        //We compute the violation map
+        //We compute the violation map (after initialisation)
         for (int i = 0; i < violations.length; i++) {
             violations[i] = -1;
             Violations(i);
             sortedVertexByViolation.add(graph.Get(i));
         }
-        initialisation_random(max_col);
         sortedVertexByViolation.sort(new SortVertexByViolations());
     }
 
@@ -99,8 +99,7 @@ public class State {
             if (Violations(newChangedVertex) < newViols) { //si ca viol moins, on à un nouveau candidat
                 newViols = Violations(newChangedVertex);
                 newValue = i;
-            }
-            
+            }   
         }
         //On remet tout comme avant
         violations[newChangedVertex] = viols;
@@ -127,7 +126,7 @@ public class State {
 
     public void initialisation_random(int max_col){
         for (int vertex: values) {
-            int value_random = (int)(Math.random() * max_col)+1;
+            int value_random = (int)(Math.random() * max_col);
 //            System.out.println(value_random);
             values[vertex] = value_random ;
 
@@ -163,6 +162,15 @@ public class State {
         return ans;
     }
 
+    public int HardCheckViolations () {
+        int ans = 0;
+        for (int i = 0; i < violations.length; i++) {
+            violations[i] = -1; //We reset the map so we have to recompute the violations
+            ans += Violations(i);
+        }
+        return ans;
+    }
+
     /**
      * Check if there is a violation bewteen two vertices
      * @param vertexIDA the first vertice
@@ -171,5 +179,9 @@ public class State {
      */
     public boolean Violation (int vertexIDA, int vertexIDB) {
         return (values[vertexIDA] == values[vertexIDB] && graph.Get(vertexIDA).Getneighborhood().contains(graph.Get(vertexIDB)));
+    }
+
+    public int Value (int vertexID) {
+        return values[vertexID];
     }
 }
