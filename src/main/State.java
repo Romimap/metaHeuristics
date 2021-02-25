@@ -96,13 +96,6 @@ public class State {
     }
 
     /**
-     * Decrease the temperature
-     */
-   private void temperature_decrease(float alpha){
-     temperature = temperature * alpha;
-    }
-
-    /**
      * @return the change in violations this state made
      */
     public int DeltaViolations () {
