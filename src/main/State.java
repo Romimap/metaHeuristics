@@ -16,6 +16,7 @@ public class State {
     private Graph graph;
     private int[] values;
     private int[] violations;
+    float temperature = 0.1f;
     public ArrayList<Vertex> sortedVertexByViolation = new ArrayList<Vertex>(); //stores the vertex ids that violates the most, descending
     private int changedVertex = -1;
     private LinkedList<State> children = new LinkedList<State>();
@@ -90,16 +91,19 @@ public class State {
         int viols = violations[newChangedVertex];
         int value = values[newChangedVertex];
 
+
         int newViols = viols;
         int newValue = value;
         for (int i = 0; i < maxCol; i++) { //On cherche la couleur qui fait le moins de viols
             //On reset violations pour que Violations(newChangedValue) refasse son calcul
             violations[newChangedVertex] = -1; 
             values[newChangedVertex] = i;
-            if (Violations(newChangedVertex) < newViols) { //si ca viol moins, on à un nouveau candidat
+
+            if (Violations(newChangedVertex) < newViols || Math.random() < Math.exp((DeltaViolations()/(float)maxCol)/ temperature)) { //si ca viol moins, on à un nouveau candidat
                 newViols = Violations(newChangedVertex);
                 newValue = i;
-            }   
+            }
+
         }
         //On remet tout comme avant
         violations[newChangedVertex] = viols;
@@ -107,11 +111,19 @@ public class State {
 
 
         newValues[newChangedVertex] = newValue; //On change la valeur dans le nouveau tableau
-        
+        temperature_decrease(0.0001f);
 
         State s = new State(graph, newChangedVertex, newValues, this);
         children.add(s);
+
         return s;
+    }
+
+    /**
+     * Decrease the temperature
+     */
+   private void temperature_decrease(float alpha){
+     temperature = temperature * alpha;
     }
 
     /**

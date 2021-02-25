@@ -10,7 +10,7 @@ public class Main {
 
         int iterations = 1000;
         int neighbors = 5;
-        int maxCol = 18;
+        int maxCol = 15;
         int nombre_essais = 100000;
 
         Graph g = new Graph("le450_15b.col");
