@@ -32,7 +32,11 @@ Pour lancer le projet, il suffit de lancer la class main.java
 ## Description des différentes classes
 
 ###Classe Graph.java
-La classe **Graph.class** permet de lire et de stocker les données contenues dans des fichiers avec l'extension .col 
+La classe **Graph.class** permet de parser les données contenues dans un fichiers .COL dans une structure de donnée représentant un graph.
+
+###Classe State.java 
+La classe **State.class** représente l'état d'un graph. C'est une structure arborescente, où un etat peut avoir n etats enfants, et 1 etat parent. Dans notre cas, chaque etat génerera un seul état, on pourra donc considerer qu'il s'agit d'une liste doublement chainée.
+
 
 ###Classe Main.java 
 La classe **Main.class* Contient le main du programme et les methodes en rapport avec le recuit simulé.
@@ -49,7 +53,8 @@ Les deux méthodes principales sont :
 
 
 - SA_Move(State cur, int maxCol, float temperature) 
+  - cur : L'etat courant
+  - maxCol : Le nombre de valeurs qu'un sommet du graph peut prendre, passé à la classe State pour generer un voisin
+  - temperature : La temperature actuelle.
 
-###Classe State.java 
-La classe **State.class** permet de représenter l'état d'un graph.Il stocke son état précédent, ses états enfants et le sommet qui a été changé.
 
