@@ -1,0 +1,45 @@
+########################################################################################################
+
+20 maxTries
+18 colors
+Temperature : 0.3
+Alpha : 0.5
+
+
+Approximation found after 6584ms with 5 violations.
+3000 maxMoves
+
+##########################################-MODIFICATION DE MAXMOVES-###############################################################
+
+
+
+5000 maxMoves
+20 maxTries
+18 colors
+Temperature : 0.3
+Alpha : 0.5
+
+Solution find found after 11171ms
+
+##########################################-MODIFICATION DE ALPHA-###############################################################
+
+
+5000 maxMoves
+20 maxTries
+18 colors
+Temperature : 0.3
+Alpha : 1.0
+
+Approximation found after 11209ms with 3 violations.
+
+
+##########################################-MODIFICATION DE TEMPERATURE-###############################################################
+
+
+5000 maxMoves
+20 maxTries
+18 colors
+Temperature : 0.7
+Alpha : 0.5
+
+Approximation found after 11573ms with 2 violations.
