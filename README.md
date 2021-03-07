@@ -27,7 +27,8 @@ C’est un des plus vieux algorithmes de recherche locale
 Il est déduit de l’algorithme « generic-Move » qui se trouve dans la classe Main.java
 
 ## Execution
-Pour lancer le projet, il suffit de lancer la class main.java
+la classe Main contient la methode main.
+> java Main
 
 ## Description des différentes classes
 
