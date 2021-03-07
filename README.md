@@ -26,21 +26,21 @@ Nous avons implémenté ici l'algorithme du recuit simulé (Simulated Annealing 
 C’est un des plus vieux algorithmes de recherche locale
 Il est déduit de l’algorithme « generic-Move » qui se trouve dans la classe Main.java
 
-##Execution
+## Execution
 Pour lancer le projet, il suffit de lancer la class main.java
 
 ## Description des différentes classes
 
-###Graph.java
+### Graph.java
 
 La classe **Graph.class** permet de parser les données contenues dans un fichiers .COL dans une structure de donnée représentant un graph.
 
-###State.java 
+### State.java 
 
 La classe **State.class** représente l'état d'un graph. C'est une structure arborescente, où un etat peut avoir n etats enfants, et 1 etat parent. Dans notre cas, chaque etat génerera un seul état, on pourra donc considerer qu'il s'agit d'une liste doublement chainée.
 
 
-###Main.java 
+### Main.java 
 
 La classe **Main.class** Contient le main du programme et les methodes en rapport avec le recuit simulé.
 Les deux méthodes principales sont :
