@@ -38,6 +38,10 @@ La classe **Graph.class** permet de parser les données contenues dans un fichie
 ### State.java 
 
 La classe **State.class** représente l'état d'un graph. C'est une structure arborescente, où un etat peut avoir n etats enfants, et 1 etat parent. Dans notre cas, chaque etat génerera un seul état, on pourra donc considerer qu'il s'agit d'une liste doublement chainée.
+- Optimisations
+  - Les sommets sont indexés par ordre de nombre de viols dans un tableau
+  - Les seules contraintes qui sont vérifiées d'un état à un autres sont le somet changé vers ses somets voisins.
+  - note : ces optimisations ont été mesurées empiriquement, il faudrait établir un cadre d'experimentation pour définir si ces changements sont des optimisations ou non.
 
 
 ### Main.java 
