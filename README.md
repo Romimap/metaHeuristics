@@ -7,7 +7,7 @@ Nous allons appliquer l'exercice 3 de cette feuille de TD: http://www.lirmm.fr/~
 
 - Le support de cours : http://www.lirmm.fr/~trombetton/cours/local.pdf
 
-## Auteurs principaux
+## Auteurs
 Auteurs principaux: 
 * **Romain Fournier** _alias_ [@Romimap](https://github.com/Romimap)
 * **Émery Bourget-Vecchio** _alias_ [@EmeryBV](https://github.com/EmeryBV)
