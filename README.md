@@ -30,6 +30,9 @@ Il est déduit de l’algorithme « generic-Move » qui se trouve dans la classe
 la classe Main contient la methode main.
 > java Main
 
+La variable **filename** dans Main.main définit le fichier lu.
+> filename = "le450_15b.col";
+
 ## Description des différentes classes
 
 ### Graph.java
