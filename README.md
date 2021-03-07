@@ -20,11 +20,10 @@ Auteurs secondaires:
 
 
 
-##Description de l'algorithme utilisé
+## Description de l'algorithme utilisé
 
-Nous avons implémenté ici l'algorithme du recuit simulé (Simulated Annealing method)
-C’est un des plus vieux algorithmes de recherche locale
-Il est déduit de l’algorithme « generic-Move » qui se trouve dans la classe Main.java
+Nous avons implémenté ici l'algorithme du recuit simulé (Simulated Annealing method) décrit dans les pages 13, 14 et 15 du support de cours.
+Nous avons choisi cet algorithme car il semblait qu'il s'integrerait bien dans notre base de code et nous avions une intuition quand à son fonctionnement.
 
 ## Execution
 la classe Main contient la methode main.
