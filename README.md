@@ -8,16 +8,14 @@ Nous allons appliquer l'exercice 3 de cette feuille de TD: http://www.lirmm.fr/~
 - Le support de cours : http://www.lirmm.fr/~trombetton/cours/local.pdf
 
 ## Auteurs
-Auteurs principaux: 
+
+
 * **Romain Fournier** _alias_ [@Romimap](https://github.com/Romimap)
 * **Émery Bourget-Vecchio** _alias_ [@EmeryBV](https://github.com/EmeryBV)
-
-Auteurs secondaires: 
 * **Clément Potin**
 * **Melvin Bardin**
 * **Malika Lin-wee-kuan**
 * **Maël Bonneaud**
-
 
 
 ## Description de l'algorithme utilisé

@@ -8,10 +8,10 @@ import COLParser.Graph.Vertex;
 public class Main {
     public static void main(String[] args) throws IOException {
         int maxMoves = 3000;
-        int maxTries = 10;
+        int maxTries = 20;
         int maxCol = 15;
-        float temperature = 1;
-        float alpha = 0.999f;
+        float temperature = 1f;
+        float alpha = 0.5f;
         boolean verbose = false;
         String filename = "le450_15b.col";
 
@@ -26,8 +26,10 @@ public class Main {
         System.out.println("");
         if (violation == 0)
             System.out.println("Solution find found after " + (end - start) + "ms");
-        else
-            System.out.println("Approximation found after " + (end - start) + "ms with " + violation + " violations.");
+        else{
+            //System.out.println("Approximation found after " + (end - start) + "ms with " + violation + " violations.");
+            System.out.println("Approximation found after " + (end - start) + "ms with " + (violation / 2) + " violations.");
+        }
         System.out.println(maxMoves + " maxMoves");
         System.out.println(maxTries + " maxTries");
         System.out.println(maxCol + " colors");
