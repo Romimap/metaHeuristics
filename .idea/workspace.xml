@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0f25225-6a1c-4327-8ee4-78724d507f3a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +137,7 @@
       <workItem from="1615045961888" duration="3410000" />
       <workItem from="1615117720062" duration="656000" />
       <workItem from="1615136467467" duration="1251000" />
-      <workItem from="1615143928868" duration="3602000" />
+      <workItem from="1615143928868" duration="4759000" />
     </task>
     <task id="LOCAL-00001" summary="Mise à jour commentaire et création d'un README.md">
       <created>1615054347890</created>
@@ -155,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615137120963</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Creation d'un dossier avec differents résultats">
+      <created>1615147666824</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615147666824</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +169,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mise à jour commentaire et création d'un README.md" />
     <MESSAGE value="modification README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="modification README.md" />
+    <MESSAGE value="Creation d'un dossier avec differents résultats" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation d'un dossier avec differents résultats" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1614193008843">
@@ -203,30 +209,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="673" y="230" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614198885494" />
-    <state x="474" y="88" key="CommitChangelistDialog2" timestamp="1615137120360">
+    <state x="474" y="88" key="CommitChangelistDialog2" timestamp="1615147666236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="474" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615137120360" />
+    <state x="474" y="88" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615147666236" />
     <state x="971" y="437" key="FileChooserDialogImpl" timestamp="1614206178059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="971" y="437" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614206178059" />
-    <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1615147471897">
+    <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1615147609031">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615147471897" />
-    <state width="1877" height="297" key="GridCell.Tab.0.center" timestamp="1615147471897">
+    <state width="1877" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615147609031" />
+    <state width="1877" height="297" key="GridCell.Tab.0.center" timestamp="1615147609030">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615147471897" />
-    <state width="1877" height="297" key="GridCell.Tab.0.left" timestamp="1615147471897">
+    <state width="1877" height="297" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615147609030" />
+    <state width="1877" height="297" key="GridCell.Tab.0.left" timestamp="1615147609030">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615147471897" />
-    <state width="1877" height="297" key="GridCell.Tab.0.right" timestamp="1615147471897">
+    <state width="1877" height="297" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615147609030" />
+    <state width="1877" height="297" key="GridCell.Tab.0.right" timestamp="1615147609031">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615147471897" />
+    <state width="1877" height="297" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615147609031" />
     <state x="848" y="387" width="442" height="265" key="MultipleFileMergeDialog" timestamp="1615143971659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
