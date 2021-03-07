@@ -22,7 +22,7 @@ Auteurs secondaires:
 
 ##Description de l'algorithme utilisé
 
-Nous avons implémenté ici l'algorithme du recuit simulé (Simulatedf Annealing method)
+Nous avons implémenté ici l'algorithme du recuit simulé (Simulated Annealing method)
 C’est un des plus vieux algorithmes de recherche locale
 Il est déduit de l’algorithme « generic-Move » qui se trouve dans la classe Main.java
 
@@ -32,13 +32,22 @@ Pour lancer le projet, il suffit de lancer la class main.java
 ## Description des différentes classes
 
 ###Classe Graph.java
-La classe **Graph.class** permet de lire et de stocker les données contenues dans des fichiers avec l'extension.col 
+La classe **Graph.class** permet de lire et de stocker les données contenues dans des fichiers avec l'extension .col 
 
 ###Classe Main.java 
-La classe **Main.class** permet d'exécuter le programme et contient également les méthodes permettant d'appliquer l'algorithme Métropolis - recuit simulé-
+La classe **Main.class* Contient le main du programme et les methodes en rapport avec le recuit simulé.
 Les deux méthodes principales sont :
 
-- MetaHeuristic(Graph g, int maxCol, int maxTries, int maxMoves, float baseTemp, float alpha);
+- MetaHeuristic(Graph g, int maxCol, int maxTries, int maxMoves, float baseTemp, float alpha)
+  - Une implémentation de l'algorithme Méta-Heuristique générique, avec en plus, la géstion de la "température" pour le recuit simulé.
+  - g : le graph sur lequel on travaille.
+  - maxCol : le nombre de valeurs qu'un sommet du graph peut prendre, le nombre de couleur maximum en d'autres mots.
+  - maxTries : Le nombre de fois qu'on va essayer de trouver une solution avant d'arreter.
+  - maxMoves : Le nombre de changements qu'on peut faire sur un graph avant de recommencer.
+  - baseTemp : la temperature à laquelle on démare.
+  - alpha : utilisé pour la réduction de la temperature. Nous utilisons une réduction géometrique Temperature = Temperature * Alpha.
+
+
 - SA_Move(State cur, int maxCol, float temperature) 
 
 ###Classe State.java 
